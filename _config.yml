@@ -6,7 +6,8 @@ signoff:          "Ralts" # Your name
 google_analytics: UA-101222464-1
 share:            true 
 markdown: kramdown
-
+kramdown:
+  input: GFM
 # 分页
 paginate: 15
 paginate_path: "liberxuepage:num"
@@ -45,9 +46,6 @@ permalink: /:year/:month/:day/:title.html
 defaults:
   - values:
       layout: "default"
-
-# Gems
-gems: [jekyll-paginate]
 
 plugins:
   - jekyll-feed
