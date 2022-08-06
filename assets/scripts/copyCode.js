@@ -11,15 +11,17 @@ copyCodeButtons.forEach((copyCodeButton, index) => {
 
     // Update the button text visually
     const { innerText: originalText } = copyCodeButton;
-    copyCodeButton.innerText = 'Copied!';
+    copyCodeButton.innerText = '已复制';
 
     // (Optional) Toggle a class for styling the button
-    copyCodeButton.classList.add('copied');
+    copyCodeButton.classList.add('已复制');
 
     // After 2 seconds, reset the button to its initial UI
     setTimeout(() => {
       copyCodeButton.innerText = originalText;
-      copyCodeButton.classList.remove('copied');
+      copyCodeButton.classList.remove('已复制');
     }, 2000);
   });
 });
+
+
