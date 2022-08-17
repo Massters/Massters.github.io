@@ -14,10 +14,10 @@ tags:
 
 ## 算法
 
+<style>table{text-align:center} </style>
 <table>
    <tr>
-      <td>排序方法</td>
-      <td></td>
+      <td colspan="2">排序方法</td>
       <td>最好</td>
       <td>最坏</td>
       <td>平均</td>
@@ -30,18 +30,18 @@ tags:
       <td rowspan="3">插入</td>
       <td>直接插入</td>
       <td>O(n)</td>
-      <td colspan="2">O(n2)</td>
+      <td colspan="2">O(n<sup>2</sup>)</td>
       <td rowspan="4">O(1)</td>
       <td>√</td>
-      <td>顺序，链表</td>
+      <td align="left">顺序，链表</td>
       <td></td>
    </tr>
    <tr>
       <td>折半插入</td>
-      <td>O(nlog2n)</td>
-      <td colspan="2">O(n2)</td>
+      <td>O(nlog<sub>2</sub>n)</td>
+      <td colspan="2">O(n<sup>2</sup>)</td>
       <td>√</td>
-      <td>顺序</td>
+      <td align="left">顺序</td>
       <td>先折半找插入位置再移动</td>
    </tr>
    <tr>
@@ -50,89 +50,72 @@ tags:
       <td>-</td>
       <td>-</td>
       <td>×</td>
-      <td>顺序</td>
+      <td align="left">顺序</td>
       <td></td>
    </tr>
    <tr>
-      <td>交换</td>
+      <td rowspan="2">交换</td>
       <td>冒泡</td>
       <td>O(n)</td>
-      <td>O(n2)</td>
-      <td></td>
+      <td colspan="2">O(n<sup>2</sup>)</td>
       <td>√</td>
-      <td>顺序，链表</td>
+      <td align="left">顺序，链表</td>
       <td></td>
    </tr>
    <tr>
-      <td></td>
       <td>快速</td>
-      <td>O(nlog2n)</td>
-      <td>O(n2)</td>
-      <td>O(nlog2n)</td>
-      <td>O(log2n)~O(n)</td>
+      <td>O(nlog<sub>2</sub>n)</td>
+      <td>O(n<sup>2</sup>)</td>
+      <td>O(nlog<sub>2</sub>n)</td>
+      <td>O(log<sub>2</sub>n)~O(n)</td>
       <td>×</td>
-      <td>顺序</td>
+      <td align="left">顺序</td>
       <td></td>
    </tr>
    <tr>
-      <td>选择</td>
+      <td rowspan="2">选择</td>
       <td>简单选择</td>
-      <td>O(n2)</td>
-      <td></td>
-      <td></td>
-      <td>O(1)</td>
+      <td colspan="3">O(n<sup>2</sup>)</td>
+      <td rowspan="2">O(1)</td>
       <td>×</td>
-      <td>顺序，链表</td>
+      <td align="left">顺序，链表</td>
       <td></td>
    </tr>
    <tr>
-      <td></td>
       <td>堆</td>
-      <td>O(nlog2n)</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>x</td>
-      <td>顺序</td>
-      <td>向下调整O(log2n)建堆O(n)</td>
+      <td colspan="3">O(nlog<sub>2</sub>n)</td>
+      <td>×</td>
+      <td align="left">顺序</td>
+      <td>向下调整O(log<sub>2</sub>n),建堆O(n)</td>
    </tr>
    <tr>
       <td>归并</td>
       <td>二路归并</td>
-      <td>O(nlog2n)</td>
-      <td></td>
-      <td></td>
+      <td colspan="3">O(nlog<sub>2</sub>n)</td>
       <td>O(n)</td>
       <td>√</td>
-      <td>顺序</td>
+      <td align="left">顺序</td>
       <td></td>
    </tr>
    <tr>
       <td>基数</td>
       <td>基数</td>
-      <td>O(d(r+n))</td>
-      <td></td>
-      <td></td>
+      <td colspan="3">O(d(r+n))</td>
       <td>O(r)</td>
       <td>√</td>
       <td></td>
       <td>与序列初始状态无关</td>
    </tr>
    <tr>
-      <td></td>
-      <td></td>
-      <td>d趟，一趟收集O(r),一趟分配O(n)</td>
-      <td></td>
-      <td></td>
+      <td colspan="2"></td>
+      <td colspan="3">d趟，一趟收集O(r),一趟分配O(n)</td>
       <td>r为基数</td>
       <td></td>
       <td></td>
       <td></td>
    </tr>
-   <tr>
-      <td></td>
-   </tr>
 </table>
+
 
 
 注：
