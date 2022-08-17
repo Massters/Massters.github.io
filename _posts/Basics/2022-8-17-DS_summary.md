@@ -27,34 +27,28 @@ tags:
       <td>备注</td>
    </tr>
    <tr>
-      <td>插入</td>
+      <td rowspan="3">插入</td>
       <td>直接插入</td>
       <td>O(n)</td>
-      <td>O(n2)</td>
-      <td></td>
-      <td>O(1)</td>
+      <td colspan="2">O(n2)</td>
+      <td rowspan="4">O(1)</td>
       <td>√</td>
       <td>顺序，链表</td>
       <td></td>
    </tr>
    <tr>
-      <td></td>
       <td>折半插入</td>
       <td>O(nlog2n)</td>
-      <td>O(n2)</td>
-      <td></td>
-      <td></td>
+      <td colspan="2">O(n2)</td>
       <td>√</td>
       <td>顺序</td>
       <td>先折半找插入位置再移动</td>
    </tr>
    <tr>
-      <td></td>
       <td>希尔</td>
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td></td>
       <td>×</td>
       <td>顺序</td>
       <td></td>
@@ -64,7 +58,6 @@ tags:
       <td>冒泡</td>
       <td>O(n)</td>
       <td>O(n2)</td>
-      <td></td>
       <td></td>
       <td>√</td>
       <td>顺序，链表</td>
@@ -141,6 +134,7 @@ tags:
    </tr>
 </table>
 
+
 注：
 
 - 每趟确定一个元素的最终位置：
@@ -189,4 +183,5 @@ tags:
 
 
 > 公式中的绝对值符号在Typora中显示为`||`,网页端显示正常~
+
 <p align="right">2022-08-17</p>
