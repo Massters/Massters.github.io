@@ -2,7 +2,7 @@
 layout: blog
 code: true
 category: 算法
-title:  算法笔记小结
+title:  "算法笔记小结"
 date:   2022-08-17 22:10
 tags:
 - 算法
