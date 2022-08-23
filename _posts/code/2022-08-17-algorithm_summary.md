@@ -625,3 +625,398 @@ tags:
 
 ## STL
 
+- vector:变长数组 `p191`   `#include<vector>`
+
+  - 定义：`vector<typename>name;`一维
+
+  - `vector<typename>Arrayname[arraySize];`二维
+
+  - 访问:下标，迭代器：`vector<typename>::iterator it;`通过`*it`访问元素
+
+  - `begin()`首元素地址，`end()`尾元素地址的下一个地址，即左闭右开。
+
+  - 只有`vector`和`string`中才允许用`vi.being()+3` 这种迭代器加上整数操作。
+
+  - `push_back(x)`后面添加一个元素x
+
+    `pop_back()`产出尾元素
+
+    `size()`
+
+    `clear()`
+
+    `insert()`:`insert(it ,x)`向迭代器it处插入x
+
+    `erase()`:
+
+    - `erase(it)``
+    - ``erase(first,last)`范围：[first,last)
+
+  - 用途：
+
+    - 储存数组，
+    - 处理最后一个满足条件的数组后不输出额外空格
+    - 用邻接表存储图。
+
+- set:内部有序，不含重复元素 `p197` `include<set>`
+
+  - 定义：`set<typename>name;`
+
+  - 除了`vector`和`string`外的STL容器，都不支持`*(it+i)`方式访问，以如下方式枚举
+
+    `for(set<int>::iterator it=st.begin();it!=st.end();it++)`
+
+  - `insert()`
+
+    `find(value)`返回的是迭代器
+
+    `erase()`:
+
+    - `erase(it)`
+    - ``erase(value)`
+    - `erase(first,last)`
+
+    `size()`
+
+    `clear()`
+
+  - 用途：自动去重并升序排序
+
+  - 元素不唯一用`multiset`,速度更快使用`unordered_set`
+
+- string:`p202` `#include<string>`
+
+  - 定义：`string str;`
+
+  - 访问：
+
+    - 下标：如果要读入和输出整个字符串，只能用` cin`和`cout`.若想用`printf`输出，则可以用`c_str()`将string类型转换为字符数组输出。
+    - 迭代器：定义`string::iterator it;`,支持迭代器加减数字操作。
+
+  - `operator+=:`:将两个字符串直接拼接起来，如：`str3=str1+str2`
+
+    compare operator:比较字符串：==,!=,<,<=,>,>=
+
+    `length()`
+
+    `size()`
+
+    `insert()`:
+
+    - `insert(pos,srting)``
+    - ``insert(it ,it2,it3)`it2,it3为待插字符串首尾迭代器
+
+    `eraser()`:
+
+    - `erase(it)`
+    - `erase(first,last)`
+    - `erase(pos,length)`
+
+    `clear()`
+
+    `substr()`:`substr(pos ,len)`放回从pos开始长len的子串
+
+    `string::npos`:常数,本身值为-1,可作`find()`失败时返回值,`unsigned_int`类型
+
+    `find()`:
+
+    - `find(str)`:成功返回在str中第一次出现位置,失败返回`npos`
+    - `find(str,pos)`从pos位开始匹配
+
+    `replace()`:
+
+    - `replace(pos, len,str2)`将str从pos开始长为len的子串替换
+    - `replace(it1,it2,str2)`将str的迭代器[it1,it2)范围子串替换为str2
+
+- map:映射`p213` `include<map>`
+
+  - 定义:`map<typename1,typename2>mp;`typename1:键类型 ,typename2:值类型
+  - 访问:
+    - 下标:map中键唯一
+    - 迭代器:
+      - it->first访问键
+      - it->second访问值
+      - map以键从小到大排序
+
+  - `find(key)`:返回键为key的迭代器,失败返回`end()`
+
+    `erase()`:
+
+    - `erase(it)`
+    - `erase(key)`
+    - `erase(first,last)`
+
+    `size`
+
+    `clear()`
+
+  - 用途:
+
+    - 建立字符与整型间映射
+    - 判断大整数或其他数据是否存在,可将map当bool数组用
+    - 字符串到字符串映射
+
+  - 若一个键对应多个值,用`multimap`,速度快用`unordered_map`
+
+- queue:队列`p218` `#include<queue>`
+
+  - 定义:`queue<typename>name;`
+
+  - 访问:只能用`front()`访问首元素,或`back()`访问队尾元素
+
+  - `push()`入队
+
+    `front()`
+
+    `back()`
+
+    `pop()`出队
+
+    `empty()`
+
+    `size()`
+
+  - 用途:广度优先搜索时,用queue.
+
+  - `front()`和`pop()`前,必须用`empty()`判断
+
+  - `deque`双端队列
+
+- priorit_queue:优先队列`p221`,队首为优先级最大的
+
+  - 定义:`priority_queue<typename>name;`
+
+  - 访问:只能通过`top()`访问队首元素,没有`front()`和`back()`
+
+  - `push(x)`
+
+    `top()`
+
+    `pop()`
+
+    `empty()`
+
+    `size()`
+
+  - 优先级设置:
+
+    - 基本数据类型:
+
+      - `priority_queue<int>q;`
+
+      - `priority_queue<int,vector<int>,less<int> >q;`
+
+        以上两种形式等价,`less<int>`表示数字大的优先级高,若想把最小元素放队首,则`priority_queue<int,vector<int>,greater<int> >q;`
+
+    - 结构体:重载"<"
+
+      - 结构体内:添加
+
+        ```c++
+        friend bool operator < (fruit f1,fruit f2){
+            return f1.price > f2.price;
+        }
+        ```
+
+        之后直接定义即可
+
+        `priority_queue<fruit>q;`
+
+      - 结构体外:
+
+        ```c++
+        struct cmp{
+            bool operator() (fruit f1,fruit f2){
+                return f1.price > f2.price;
+            }
+        };
+        ```
+
+        此时定义改为:`priority_queue<fruit,vector<fruit>cmp>q;`
+
+      - 两种写法,return效果均与`sort()`中的cmp相反,以上代码效果均为数字大的在队列顶,与默认的效果(基本数据类型)一致.
+
+    - 若数据较大(若字符串或数组)使用引用提高效率,将比较类的参数改为:`(const fruit &f1,const fruit &f2)`
+
+  - 用途:
+    - 解决贪心问题
+    - 对Dijkstra算法优化
+  - 使用`top()`前必须用`empty()`判空.
+
+- stack:栈`p227` `#include<stack>`
+
+  - 定义:`stack<typename>name;`
+
+  - 访问:只能通过`top()`访问栈顶元素
+
+  - `push()`
+
+    `top()`
+
+    `pop()`
+
+    `empty()`
+
+    `size()`
+
+  - 用途:
+
+    - 模拟实现递归
+    - 防止程序对栈内存的限制而导致出错
+
+- pair:可以看作内部有两元素的结构体`p230` `#include<utility>`
+
+  - 定义:
+
+    - `pair<typename1,typename2>name;`
+    - `pair<string,int>p("haha",5);`定义的同时初始化
+    - `pair<string,int>("haha",5)`临时定义
+    - `make_pair("haha",5)`临时定义
+
+  - 访问:pair中只有两元素`first` `second`按元素结构体访问即可.
+
+  - 比较:== ,!= ,< ,<= ,>  ,>=规则先以`first` 大小为标准,相等则比较`second`
+
+  - 用途:
+
+    - 代替二元结构体及其构造函数
+
+    - 作为`map`的键值来插入
+
+      `mp.insert(make_pair("heihei",5));`
+
+      `mp.insert(pair<string,int>("haha",10));`
+
+- Algorithm下的常用函数:
+
+  - `max(x,y)`,`min(x,y)`参数必须2个
+
+  - `abs(x)`返回绝对值,x必须是整数,浮点数使用math下的`fabs()`
+
+  - `swap(x,y)`交换x,y的值
+
+  - `reverse(it,it2)`将数组指针在[it,it2)之间的元素或容器迭代器在[it,it2)范围内的元素反转
+
+  - `next_permutation()`给出一个序列在全排列中的下一个序列,循环要使用`do...while`,达到最后一个排列时返回`false`
+
+  - `fill()`将数组或容器中的某一段区间赋为某个相同的值`fill(a,a+5,23)`
+
+  - `sort()`排序:
+
+    - cmp函数:
+
+      - 基本数据类型数组排序:`bool cmp(int a,int b){return a>b;}`
+
+      - 结构体数组的排序:`bool cmp(node a,node b){return a.x<b.x;}`
+
+      - 容器排序:
+
+        只有`vector`,`string`,`deque`可以使用`sort()`
+
+        `bool cmp(int a,int b){return a>b;}`
+
+        `sort(vi.begin(),vi.end(),cmp();`
+
+    - 用法:sort(首元素地址,尾元素地址的下一个地址,比较函数(选填))
+
+  - `lower_bound()/upper_bound()`:需用在有序容器中
+
+    - `lower_bound(first,last,val)`寻找[first,last)内第一个值大于等于val的元素位置
+    - `upper_bound(first,last,val)`寻找[first,last)内第一个值大于val的元素位置
+    - 成功返回数组指针或容器迭代器,失败返回可以插入改元素的位置指针或迭代器
+
+## 数据结构专题(1)
+
+- 栈的应用:
+
+  - 数组实现:栈顶指针int型变量TOP,栈空TOP=-1
+  - 链表实现:栈顶指针`int*`型指针
+  - `pop()`,`top()`前必须用`empty()`判空
+  - 清空栈:`while(!st.empty()){st.pop();}`或定义可以新栈实现变相清空.
+  - 简单计算器:中缀->后缀->计算`p248`
+    - 除法可能导致浮点数,故操作数类型设为`double`
+    - 用`string`的`erase()`方法消空格
+    - 数字可能不是个位数
+    - 为了读输入中的空格,需要用`getline(cin,str)`
+
+- 队列的应用:
+
+  - 队首指针`front()`指队首元素的==前一个位置==,队尾指针`rear`指队尾元素
+
+  - 初始状态`front=-1,rear=-1`
+
+  - `front+1`为队首元素位置
+
+  - `pop()`,`get_front()`,`get_rear()`前必须用`empty()`判空
+
+  - 清空:`while(!q.emtpy()){q.pop()}`
+
+    - 若单独用函数清空,则参数需引用:
+
+      ```c++
+      void emtpy(stack<int> &q){
+      	while(!q.empty()){
+      		q.pop();
+      	}
+      }
+      ```
+
+    - 更常见的方法是重新定义一个队列以实现队列的清空.
+
+- 链表处理:`p253`
+
+  - ```c++
+    struct node{
+    	typename data;
+        node* next;
+    };
+    ```
+
+  - 分配内存:
+
+    - `typename* p=(typename*)malloc(sizeof(typename));`
+
+      例:`int* p=(int*)malloc(sizeof(int));`
+
+    - `typename* p=new typename;`
+
+      例:`int* p=new int;`
+
+  - 释放内存:
+
+    - `free(p);`:对应malloc
+    - `delete(p);`:对应new
+
+  - 创建:
+
+    - `node* node1=new node;`
+
+    - 使用for循环创建:
+
+      ```c++
+      node* create (int Array[]){
+          node *p,*pre,*head;
+          head=new node;    //head
+          head->next=NULL;  //head
+          pre=head;         //pre=head
+          for(int i=0;i<5;i++){
+              p=new node;         //p
+              p->data=Array[i];   //p
+              p->next=NULL;       //p
+              pre->next=p;        //pre
+              pre=p;              //pre
+          }
+          return head;
+      }
+      ```
+
+  - 查找:从第一个结点开始,不断判断当前结点数据域是否等于x,若等于,`count`+1,直到链表结尾,最后返回计数器`count`
+
+  - 插入:
+
+  
+
+
+
+
+
