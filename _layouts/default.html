@@ -28,6 +28,15 @@
       ga('send', 'pageview');
     </script>
     {% endif %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7K2JZRXK48"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7K2JZRXK48');
+    </script>
     <!-- 导航栏 -->
     <div class="navbar-container">
       <a href="/?liberxue" title="访问 {{  site.title }}" class="navbar-logo"> <img src="{{ site.url }}/style/images/portrait.png" alt="{{ site.title }}"> </a>
