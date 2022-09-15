@@ -1649,9 +1649,25 @@ pre code::after {
 /* ==========================================================================
    #comments
    ========================================================================== */
-   .copy-code-button {
+   /* 代码复制按钮 */
+   /* .copy-code-button {
     display: block;
-  }
+  } */
+
+  .copy-code-button {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-column-gap: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px 8px;
+    position: relative;
+    top: 34px;
+    left:1203px;
+    z-index: 1;
+    }
 
   .comment-container {
     position: relative;
