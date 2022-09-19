@@ -1455,7 +1455,7 @@ tags:
 
     e[r]=ve[i]
 
-    l[r]=vl[r]-length[r]
+    l[r]=vl[j]-length[r]
 
     ve[j]=ve[i1]+length[r1]~ve[ik]+length[rk]中的最大值(拓扑)
 
