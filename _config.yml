@@ -17,7 +17,7 @@ links:
     url:          /
     external:     false
   - name:         408
-    url:          /Basics
+    url:          /basics
     external:     false
   - name:         Code
     url:          /code

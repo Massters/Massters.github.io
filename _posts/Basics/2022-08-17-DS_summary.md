@@ -1,7 +1,7 @@
 ---
 layout: blog
 istop: false
-Basics: true
+basics: true
 title: "数据结构重点"
 date:  2022-08-17
 category: DS
