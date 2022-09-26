@@ -9,7 +9,7 @@ share:            true
 # 分页
 paginate: 15
 paginate_path: "liberxuepage:num"
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 
 links:
