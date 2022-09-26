@@ -7,7 +7,7 @@ google_analytics: G-7K2JZRXK48
 share:            true 
 
 # 分页
-paginate: 15
+paginate: 6
 paginate_path: "liberxuepage:num"
 plugins: [jekyll-paginate]
 
