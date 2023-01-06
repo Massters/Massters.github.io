@@ -124,11 +124,13 @@
 				</div>
 	</div>
 </div> -->
-{% include foot.html %}
+
+
 <!--liberxueconnnet-menu-->
 <div id="directory-content" class="directory-content">
     <div id="directory"></div>
 </div>
+
 <!--liberxueconnnet-menu-->
 <script>
 var postDirectoryBuild = function() {
@@ -224,15 +226,15 @@ postDirectoryBuild();
 
 
 /*代码高亮*/
-</script>
-<!-- <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script> 原来的高亮代码 -->
-<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=desert"></script> -->
-<!-- 在文章代码处使用<pre class="prettyprint">code..</pre> -->
-<!-- <script>lang=hljs.initHighlightingOnLoad(); //原来的高亮代码 -->
-</script>
+//<!-- /script -->
+//<!-- <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script> 原来的高亮代码 -->
+//<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=desert"></script> -->
+//<!-- 在文章代码处使用<pre class="prettyprint">code..</pre> -->
+//<!-- <script>lang=hljs.initHighlightingOnLoad(); //原来的高亮代码 -->
+//<!-- </script> -->
 
+<!--  鼠标点击文字特效  -->
 <script>
-    /* 鼠标点击文字特效 */
     var font = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
     var color = new Array('#ff0000', '#eb4310', '#f6941d', '#fbb417', '#ffff00', '#cdd541', '#99cc33', '#3f9337', '#219167', '#239676', '#24998d', '#1f9baa', '#0080ff', '#3366cc', '#333399', '#003366', '#800080', '#a1488e', '#c71585', '#bd2158', '#eec142', '#FEEE6D');
     var f_idx = Math.floor(Math.random() * 20) % font.length;
@@ -271,5 +273,6 @@ postDirectoryBuild();
 <!-- 代码一键复制按钮 -->
 <script src="/assets/scripts/copyCode.js"></script>
 
+{% include foot.html %}
  </body>
 </html>

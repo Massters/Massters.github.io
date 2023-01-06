@@ -1550,7 +1550,7 @@ tags:
 
   - nextval数组:nextval[i]含义为pattern的i+1位失配时,i应当回退的最佳位置.
 
-  - > [KMP算法专题]({% post_url /Basics/2022-07-29-KMP %})
+  - > [KMP算法专题]({% post_url /basics/2022-07-29-KMP %})
 
 ## 专题拓展
 

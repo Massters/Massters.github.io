@@ -7,9 +7,9 @@ google_analytics: G-7K2JZRXK48
 share:            true 
 
 # 分页
-paginate: 15
+paginate: 6
 paginate_path: "liberxuepage:num"
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 
 links:
@@ -17,7 +17,7 @@ links:
     url:          /
     external:     false
   - name:         408
-    url:          /Basics
+    url:          /basics
     external:     false
   - name:         Code
     url:          /code
@@ -39,8 +39,8 @@ links:
     external:     false
 # ------------ CONFIGURABLE END ------------
 
-#permalink:        /:categories/:title.html
-permalink: /:year/:month/:day/:title.html
+permalink:        /:categories/:title.html
+#permalink: /:year/:month/:day/:title.html
 defaults:
   - values:
       layout: "default"
