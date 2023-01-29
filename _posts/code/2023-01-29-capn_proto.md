@@ -1,7 +1,7 @@
 ---
 layout: blog
 code: true
-category: cap'n proto
+category: capnp
 title: "Capn Proto Sample Code"
 date:   2023-01-29
 - cap'n proto
