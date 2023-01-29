@@ -2,7 +2,7 @@
 layout: blog
 code: true
 category: cap'n proto
-title:  "Cap'n proto sample code"
+title: "Cap'n Proto Sample Code"
 date:   2023-01-29
 - cap'n proto
 ---
