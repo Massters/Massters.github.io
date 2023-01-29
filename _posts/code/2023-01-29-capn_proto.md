@@ -4,7 +4,8 @@ code: true
 category: capnp
 title: "Cap'n Proto Sample Code"
 date:   2023-01-29
-- cap'n proto
+tags:
+- capnp
 ---
 
 # Cap'n Proto C++ RPC sample code
