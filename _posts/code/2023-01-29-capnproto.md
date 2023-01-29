@@ -3,8 +3,7 @@ layout: blog
 code: true
 category: cap'n proto
 title:  "Cap'n proto sample code"
-date:   2023-01-29 23:55
-tags:
+date:   2023-01-29
 - cap'n proto
 ---
 
